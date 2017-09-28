@@ -54,7 +54,7 @@ ROOT_URLCONF = 'virscomapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR + '/templates/',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,6 +65,9 @@ TEMPLATES = [
             ],
         },
     },
+]
+STATICFILES_DIRS = [
+    BASE_DIR + "/static/",
 ]
 
 WSGI_APPLICATION = 'virscomapp.wsgi.application'
@@ -113,6 +116,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+ACCOUNT_ACTIVATION_DAYS = 7
+
+LOGIN_REDIRECT_URL = '/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
